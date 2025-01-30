@@ -1,0 +1,277 @@
+<!-- layout/post.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>A Comprehensive Guide to Managing Python Projects with Poetry | Ian&#39;s Archives</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 引入全局样式 -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- 引入 Highlight.js 的样式 -->
+  <link rel="stylesheet" href="/css/arta.min.css">
+
+  <!-- 引入 Font Awesome 用于分享按钮图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- 如果你有其他 CSS 文件，可以继续添加 -->
+  
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Ian's Archives" type="application/atom+xml">
+</head>
+<body>
+<body class="post-page">
+    <header style="
+  margin-bottom: 2em; 
+  background-color: #F8F5D7; /* 使 Header 的外层与正文背景一致，便于看见盒子区块效果 */
+">
+  <!-- 这是真正的 Header 盒子，宽度居中，固定高80px，背景、圆角等 -->
+  <div style="
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #F2E4BB;
+    border-radius: 6px;
+    height: 80px;               /* 固定高度 */
+    display: flex;
+    align-items: center;        /* 垂直居中 */
+    justify-content: flex-start;/* 左对齐主内容, 右侧若需菜单也可 space-between */
+    gap: 2em;
+    padding: 0 1em;
+  ">
+    <!-- 左侧：Logo + 标题 + 菜单 -->
+    <div style="display: flex; align-items: center; gap: 2em;">
+      
+
+      <!-- 使标题可点击，链接到首页 -->
+      <a href="/" style="font-size: 1.5rem; font-weight: bold; text-decoration: none; color: inherit;">
+        Me
+      </a>
+
+      <nav>
+        <ul style="
+          list-style: none; 
+          margin: 0; 
+          padding: 0; 
+          display: flex; 
+          gap: 1.5em;
+        ">
+          
+            
+              <li>
+                <a href="/blog"
+                  style="text-decoration: underline; color: #333;">
+                  Blog
+                </a>
+              </li>
+            
+              <li>
+                <a href="/contact"
+                  style="text-decoration: underline; color: #333;">
+                  Contact
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags"
+                  style="text-decoration: underline; color: #333;">
+                  Tags
+                </a>
+              </li>
+            
+              <li>
+                <a href="/category"
+                  style="text-decoration: underline; color: #333;">
+                  Category
+                </a>
+              </li>
+            
+              <li>
+                <a href="/talk"
+                  style="text-decoration: underline; color: #333;">
+                  Talk
+                </a>
+              </li>
+            
+          
+        </ul>
+      </nav>
+    </div>
+
+    <!-- 右侧：可选链接（如Signalboost），若需在最右则可用 margin-left: auto -->
+    <div style="margin-left: auto;">
+      
+        <a href="/other"
+          style="text-decoration: underline; color: #333; font-size: 1rem;">
+          Other
+        </a>
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post-container">
+        <!-- 博文标题 -->
+        <h1>A Comprehensive Guide to Managing Python Projects with Poetry</h1>
+
+        <!-- 博文元数据（日期、标签） -->
+        <div class="post-meta">
+            <span>January 30, 2025</span>
+            
+                | <span>Tags:
+                    
+                        <a href="/tags/poetry/">poetry</a>
+                    
+                </span>
+            
+        </div>
+
+        <!-- 博文内容 -->
+        <div class="post-content">
+            <blockquote>
+<p>Poetry is a powerful dependency management and packaging tool for Python. It provides a seamless workflow for managing dependencies, creating virtual environments, and packaging applications. This guide will walk you through the essential features of Poetry, including how to generate a <code>requirements.txt</code> file for compatibility with <code>pip</code>.</p>
+</blockquote>
+<h2 id="1-Installing-Poetry"><strong>1. Installing Poetry</strong></h2>
+<p>To install Poetry, run the following command:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://install.python-poetry.org | python3 -</span><br></pre></td></tr></table></figure>
+<p>After installation, ensure Poetry is available in your terminal by checking its version:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poetry --version</span><br></pre></td></tr></table></figure>
+<p>If the command does not work, add Poetry to your PATH:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=&quot;$HOME/.local/bin:$PATH&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="2-Creating-a-New-Poetry-Project"><strong>2. Creating a New Poetry Project</strong></h2>
+<p>To create a new Python project with Poetry, use:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poetry new my_project</span><br></pre></td></tr></table></figure>
+<p>This command sets up a basic Python package structure:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">my_project/</span><br><span class="line">├── pyproject.toml  # Configuration file for Poetry</span><br><span class="line">├── README.rst</span><br><span class="line">├── my_project/     # Project source code</span><br><span class="line">│   └── __init__.py</span><br><span class="line">└── tests/          # Test files</span><br></pre></td></tr></table></figure>
+<p>If you already have a project and want to initialize Poetry within it, navigate to the project directory and run:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poetry init</span><br></pre></td></tr></table></figure>
+<p>This will guide you through setting up <code>pyproject.toml</code> interactively.</p>
+<h2 id="3-Managing-Dependencies"><strong>3. Managing Dependencies</strong></h2>
+<h3 id="Adding-Dependencies"><strong>Adding Dependencies</strong></h3>
+<p>To install a package and automatically update <code>pyproject.toml</code> and <code>poetry.lock</code>, use:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poetry add requests</span><br></pre></td></tr></table></figure>
+<p>For a development-only dependency:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poetry add --dev pytest</span><br></pre></td></tr></table></figure>
+<h3 id="Removing-Dependencies"><strong>Removing Dependencies</strong></h3>
+<p>To remove a package:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poetry remove requests</span><br></pre></td></tr></table></figure>
+<h3 id="Updating-Dependencies"><strong>Updating Dependencies</strong></h3>
+<p>To update all dependencies:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poetry update</span><br></pre></td></tr></table></figure>
+<p>To update a specific package:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poetry update requests</span><br></pre></td></tr></table></figure>
+<h2 id="4-Virtual-Environments-and-Running-Code"><strong>4. Virtual Environments and Running Code</strong></h2>
+<p>Poetry automatically manages a virtual environment for your project. You can activate it with:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poetry shell</span><br></pre></td></tr></table></figure>
+<p>To run a Python script within the virtual environment without activating the shell:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poetry run python script.py</span><br></pre></td></tr></table></figure>
+<p>To check the virtual environment being used:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poetry env info</span><br></pre></td></tr></table></figure>
+<h2 id="5-Exporting-Requirements-for-pip"><strong>5. Exporting Requirements for pip</strong></h2>
+<p>Poetry does not use <code>requirements.txt</code> natively, but you can export dependencies for environments that require it (e.g., Docker, CI/CD pipelines).</p>
+<h3 id="6-Install-the-Poetry-Export-Plugin">6. <strong>Install the Poetry Export Plugin</strong></h3>
+<p>Poetry 2.0+ requires an additional plugin to export dependencies:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poetry self add poetry-plugin-export</span><br></pre></td></tr></table></figure>
+<h3 id="7-Generate-requirements-txt">7. <strong>Generate</strong> <code>requirements.txt</code></h3>
+<p>Run the following command to export dependencies:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poetry export -f requirements.txt --output requirements.txt --without-hashes</span><br></pre></td></tr></table></figure>
+<p>If you need to include development dependencies:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poetry export -f requirements.txt --output requirements.txt --without-hashes --with dev</span><br></pre></td></tr></table></figure>
+<p>You can then install these dependencies using pip:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+<h2 id="8-Version-Management"><strong>8. Version Management</strong></h2>
+<p>To check the current project version:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poetry version</span><br></pre></td></tr></table></figure>
+<p>To update the version:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">poetry version patch  # Increases 1.0.0 -&gt; 1.0.1</span><br><span class="line">poetry version minor  # Increases 1.0.0 -&gt; 1.1.0</span><br><span class="line">poetry version major  # Increases 1.0.0 -&gt; 2.0.0</span><br></pre></td></tr></table></figure>
+<h2 id="9-Publishing-to-PyPI"><strong>9. Publishing to PyPI</strong></h2>
+<p>To publish your package to PyPI, first build it:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poetry build</span><br></pre></td></tr></table></figure>
+<p>Then publish it:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poetry publish</span><br></pre></td></tr></table></figure>
+<p>To publish to TestPyPI for testing:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poetry publish --repository testpypi</span><br></pre></td></tr></table></figure>
+<h2 id="Conclusion"><strong>Conclusion</strong></h2>
+<p>Poetry simplifies dependency management, virtual environments, and packaging for Python projects. By using Poetry, you can ensure a more reliable and consistent development workflow. With the ability to export <code>requirements.txt</code>, Poetry remains compatible with traditional Python workflows while providing a modern alternative to <code>pip</code> and <code>virtualenv</code>.</p>
+<p>Start using Poetry today to streamline your Python project management! 🚀</p>
+
+        </div>
+
+        <!-- 分享按钮 -->
+        <div class="share-buttons">
+            <a href="https://twitter.com/intent/tweet?url=/2025/01/30/poetry/&text=A%20Comprehensive%20Guide%20to%20Managing%20Python%20Projects%20with%20Poetry" target="_blank" aria-label="Share on Twitter">
+                <i class="fab fa-twitter" aria-hidden="true"></i> Share on Twitter
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=/2025/01/30/poetry/" target="_blank" aria-label="Share on Facebook">
+                <i class="fab fa-facebook-f" aria-hidden="true"></i> Share on Facebook
+            </a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=/2025/01/30/poetry/&title=A%20Comprehensive%20Guide%20to%20Managing%20Python%20Projects%20with%20Poetry" target="_blank" aria-label="Share on LinkedIn">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i> Share on LinkedIn
+            </a>
+            <!-- 根据需要添加更多分享按钮 -->
+        </div>
+
+        <!-- 文章标签 -->
+        
+            <div class="post-tags">
+                <strong>Tags:</strong>
+                
+                    <a href="/tags/poetry/">poetry</a>
+                
+            </div>
+        
+
+        <!-- 文章导航（上一篇/下一篇） -->
+        <div class="post-navigation">
+            
+                <span></span>
+            
+
+            
+                <span></span>
+            
+        </div>
+
+        <!-- 评论区（如果使用评论系统） -->
+        
+    </div>
+
+    <!-- layout/_partial/footer.ejs -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <p class="footer-text">
+      Copyright 2012-2025 Ian.
+      Knowledge is not to be accumulated, but to be disseminated.
+    </p>
+
+    <hr class="footer-divider" />
+
+    <p class="footer-text">
+      Like what you see? Please share it!
+      </a>
+    </p>
+
+    <hr class="footer-divider" />
+
+    <p class="footer-text">
+      Served by <strong>Ian</strong> (<code>/app/iansite</code>)
+      with site version <strong>1.0.1</strong>,
+      source code available
+      <a href="https://github.com/iaaaannn0/hexo-theme-epsilon" target="_blank" class="footer-link">
+        here
+      </a>.
+    </p>
+    <!-- 引入 Highlight.js 的脚本 -->
+<script src="/js/highlight.min.js"></script> <!-- 确保 highlight.min.js 位于 /source/js/ 目录下 -->
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightElement(block);
+    });
+  });
+</script>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ian&#39;s Archives</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 引入全局样式 -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- 引入 Highlight.js 的样式 -->
+  <link rel="stylesheet" href="/css/arta.min.css">
+
+  <!-- 引入 Font Awesome 用于分享按钮图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- 如果你有其他 CSS 文件，可以继续添加 -->
+  
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Ian's Archives" type="application/atom+xml">
+</head>
+<body>
+<body style="background-color: #F8F5D7; margin: 0; padding: 0;">
+
+<header style="
+  margin-bottom: 2em; 
+  background-color: #F8F5D7; /* 使 Header 的外层与正文背景一致，便于看见盒子区块效果 */
+">
+  <!-- 这是真正的 Header 盒子，宽度居中，固定高80px，背景、圆角等 -->
+  <div style="
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #F2E4BB;
+    border-radius: 6px;
+    height: 80px;               /* 固定高度 */
+    display: flex;
+    align-items: center;        /* 垂直居中 */
+    justify-content: flex-start;/* 左对齐主内容, 右侧若需菜单也可 space-between */
+    gap: 2em;
+    padding: 0 1em;
+  ">
+    <!-- 左侧：Logo + 标题 + 菜单 -->
+    <div style="display: flex; align-items: center; gap: 2em;">
+      
+
+      <!-- 使标题可点击，链接到首页 -->
+      <a href="/" style="font-size: 1.5rem; font-weight: bold; text-decoration: none; color: inherit;">
+        Me
+      </a>
+
+      <nav>
+        <ul style="
+          list-style: none; 
+          margin: 0; 
+          padding: 0; 
+          display: flex; 
+          gap: 1.5em;
+        ">
+          
+            
+              <li>
+                <a href="/blog"
+                  style="text-decoration: underline; color: #333;">
+                  Blog
+                </a>
+              </li>
+            
+              <li>
+                <a href="/contact"
+                  style="text-decoration: underline; color: #333;">
+                  Contact
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags"
+                  style="text-decoration: underline; color: #333;">
+                  Tags
+                </a>
+              </li>
+            
+              <li>
+                <a href="/category"
+                  style="text-decoration: underline; color: #333;">
+                  Category
+                </a>
+              </li>
+            
+              <li>
+                <a href="/talk"
+                  style="text-decoration: underline; color: #333;">
+                  Talk
+                </a>
+              </li>
+            
+          
+        </ul>
+      </nav>
+    </div>
+
+    <!-- 右侧：可选链接（如Signalboost），若需在最右则可用 margin-left: auto -->
+    <div style="margin-left: auto;">
+      
+        <a href="/other"
+          style="text-decoration: underline; color: #333; font-size: 1rem;">
+          Other
+        </a>
+      
+    </div>
+  </div>
+</header>
+
+
+<!-- 主容器，控制居中和边距 -->
+<div style="max-width: 1200px; margin: 0 auto; padding: 1em;">
+
+  <!-- 显示姓名和职称在外层 -->
+  <section style="margin-bottom: 2em;">
+    
+      <h1 style="font-size: 2rem; margin: 0 0 0.3em 0;">
+        Ian
+      </h1>
+    
+
+    
+      <h2 style="font-size: 1.2rem; color: #444; margin: 0;">
+        GNU&amp;Linux | RedTeam | OSINT
+      </h2>
+    
+  </section>
+
+  <!-- 头像 + 介绍文本的卡片 -->
+  <section style="
+    background-color: #E8D3AB;
+    border-radius: 6px;
+    padding: 1.5em;
+    display: flex;
+    align-items: flex-start;
+    gap: 2em;
+    margin-bottom: 2em;
+  ">
+    
+      <!-- 左侧头像 -->
+      <div style="flex-shrink: 0;">
+        <img 
+          src="https://avatars.githubusercontent.com/u/119853210"
+          alt="avatar"
+          style="width: 120px; height: auto; border-radius: 4px;"
+        />
+      </div>
+    
+
+    <!-- 右侧详情文本 -->
+    <div style="flex: 1;">
+      
+        <p style="line-height: 1.6; margin-top: 0;">
+          I&#39;m an open-source enthusiast, Linux tinkerer, programmer, and system optimization geek. As a student, I’m always eager to dive deeper into the world of technology, exploring everything from low-level system internals to high-level programming paradigms. I believe in the power of open-source and spend my time experimenting with different Linux distributions, optimizing performance, and automating workflows just for fun.
+
+        </p>
+      
+    </div>
+  </section>
+
+  <!-- Recent Articles 列表：日期 + 超链接标题 -->
+  <main style="font-size: 16px; margin-bottom: 2em;">
+    <h2 style="font-size: 24px; font-weight: bold; margin-bottom: 1em;">
+      Recent Articles
+    </h2>
+
+    
+      <p style="margin: 0 0 0.8em 0;">
+        01/30/2025 -
+        <a href="/2025/01/30/poetry/" style="text-decoration: underline; color: #333;">
+          A Comprehensive Guide to Managing Python Projects with Poetry
+        </a>
+      </p>
+    
+  </main>
+
+  <!-- Highlighted Projects 区块：从 theme.highlightedProjects 读取 -->
+  
+    <section style="font-size: 16px; margin-bottom: 2em;">
+      <h2 style="font-size: 24px; font-weight: bold; margin-bottom: 1em;">
+        Highlighted Projects
+      </h2>
+      
+        <p style="margin: 0 0 0.8em 0;">
+          <strong>
+            <a target="_blank" rel="noopener" href="https://github.com/iaaaannn0/blocklistru" style="text-decoration: underline; color: #333;">
+              blocklistru
+            </a>
+          </strong>
+          - A list of domains blocked in Russia.
+        </p>
+      
+        <p style="margin: 0 0 0.8em 0;">
+          <strong>
+            <a target="_blank" rel="noopener" href="https://github.com/iaaaannn0/blockdetect" style="text-decoration: underline; color: #333;">
+              blockdetect
+            </a>
+          </strong>
+          - A tool to detect and analyze domain blocking methods, including DNS pollution, IP blocking, DPI, and more.
+        </p>
+      
+        <p style="margin: 0 0 0.8em 0;">
+          <strong>
+            <a target="_blank" rel="noopener" href="https://github.com/iaaaannn0/hexo-theme-epsilon" style="text-decoration: underline; color: #333;">
+              hexo-theme-epsilon
+            </a>
+          </strong>
+          - Epsilon is a clean, minimal, and customizable Hexo theme designed for simplicity and flexibilit.
+        </p>
+      
+    </section>
+  
+
+  <!-- Quick Links 区块：从 theme.quickLinks 读取 -->
+  
+    <section style="font-size: 16px;">
+      <h2 style="font-size: 24px; font-weight: bold; margin-bottom: 1em;">
+        Quick Links
+      </h2>
+      <ul style="margin: 0; padding: 0; list-style: none;">
+        
+          <li style="margin-bottom: 0.8em; list-style: disc; padding-left: 1.5em;">
+            <a target="_blank" rel="noopener" href="https://github.com/iaaaannn0"
+               style="color: #cc0052; text-decoration: underline;">
+              GitHub
+            </a>
+          </li>
+        
+      </ul>
+    </section>
+  
+
+      <!-- Tags... theme.mytags  -->
+  
+    <section style="display: flex; flex-wrap: wrap; gap: 1em;">
+      
+        <span style="
+          display: inline-block;
+          background-color: #E8D3AB;
+          padding: 0.3em 0.6em;
+          border-radius: 4px;
+          font-size: 16px;
+        ">
+          Docker
+        </span>
+      
+        <span style="
+          display: inline-block;
+          background-color: #E8D3AB;
+          padding: 0.3em 0.6em;
+          border-radius: 4px;
+          font-size: 16px;
+        ">
+          Git
+        </span>
+      
+        <span style="
+          display: inline-block;
+          background-color: #E8D3AB;
+          padding: 0.3em 0.6em;
+          border-radius: 4px;
+          font-size: 16px;
+        ">
+          Go
+        </span>
+      
+        <span style="
+          display: inline-block;
+          background-color: #E8D3AB;
+          padding: 0.3em 0.6em;
+          border-radius: 4px;
+          font-size: 16px;
+        ">
+          C/C++
+        </span>
+      
+        <span style="
+          display: inline-block;
+          background-color: #E8D3AB;
+          padding: 0.3em 0.6em;
+          border-radius: 4px;
+          font-size: 16px;
+        ">
+          DevOps
+        </span>
+      
+        <span style="
+          display: inline-block;
+          background-color: #E8D3AB;
+          padding: 0.3em 0.6em;
+          border-radius: 4px;
+          font-size: 16px;
+        ">
+          Nix
+        </span>
+      
+        <span style="
+          display: inline-block;
+          background-color: #E8D3AB;
+          padding: 0.3em 0.6em;
+          border-radius: 4px;
+          font-size: 16px;
+        ">
+          NixOS
+        </span>
+      
+        <span style="
+          display: inline-block;
+          background-color: #E8D3AB;
+          padding: 0.3em 0.6em;
+          border-radius: 4px;
+          font-size: 16px;
+        ">
+          Ubuntu
+        </span>
+      
+        <span style="
+          display: inline-block;
+          background-color: #E8D3AB;
+          padding: 0.3em 0.6em;
+          border-radius: 4px;
+          font-size: 16px;
+        ">
+          Gentoo
+        </span>
+      
+        <span style="
+          display: inline-block;
+          background-color: #E8D3AB;
+          padding: 0.3em 0.6em;
+          border-radius: 4px;
+          font-size: 16px;
+        ">
+          Vim
+        </span>
+      
+        <span style="
+          display: inline-block;
+          background-color: #E8D3AB;
+          padding: 0.3em 0.6em;
+          border-radius: 4px;
+          font-size: 16px;
+        ">
+          ASM
+        </span>
+      
+    </section>
+  
+</div>
+
+<!-- layout/_partial/footer.ejs -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <p class="footer-text">
+      Copyright 2012-2025 Ian.
+      Knowledge is not to be accumulated, but to be disseminated.
+    </p>
+
+    <hr class="footer-divider" />
+
+    <p class="footer-text">
+      Like what you see? Please share it!
+      </a>
+    </p>
+
+    <hr class="footer-divider" />
+
+    <p class="footer-text">
+      Served by <strong>Ian</strong> (<code>/app/iansite</code>)
+      with site version <strong>1.0.1</strong>,
+      source code available
+      <a href="https://github.com/iaaaannn0/hexo-theme-epsilon" target="_blank" class="footer-link">
+        here
+      </a>.
+    </p>
+    <!-- 引入 Highlight.js 的脚本 -->
+<script src="/js/highlight.min.js"></script> <!-- 确保 highlight.min.js 位于 /source/js/ 目录下 -->
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightElement(block);
+    });
+  });
+</script>
+  </div>
+</footer>
+</body>
+</html>
