@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://iaaaannn0.com/2025/02/06/Semantic-Versioning-for-GitHub-Releases/</loc>
+    
+    <lastmod>2025-02-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://iaaaannn0.com/2025/02/05/From-Setup-to-Exploitation-A-Comprehensive-Guide-to-2FA-Weaknesses/</loc>
     
     <lastmod>2025-02-05</lastmod>
@@ -55,6 +64,13 @@
   
   <url>
     <loc>http://iaaaannn0.com/tags/vuls/</loc>
+    <lastmod>2025-02-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://iaaaannn0.com/tags/releases/</loc>
     <lastmod>2025-02-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

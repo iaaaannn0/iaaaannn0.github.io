@@ -1,0 +1,348 @@
+<!-- layout/post.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Semantic Versioning for GitHub Releases | Ian&#39;s Archives</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 引入全局样式 -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- 引入 Highlight.js 的样式 -->
+  <link rel="stylesheet" href="/css/arta.min.css">
+
+  <!-- 引入 Font Awesome 用于分享按钮图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- 如果你有其他 CSS 文件，可以继续添加 -->
+  
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Ian's Archives" type="application/atom+xml">
+</head>
+<body>
+<body class="post-page">
+    <header style="
+  margin-bottom: 2em; 
+  background-color: #F8F5D7; /* 使 Header 的外层与正文背景一致，便于看见盒子区块效果 */
+">
+  <!-- 这是真正的 Header 盒子，宽度居中，固定高80px，背景、圆角等 -->
+  <div style="
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #F2E4BB;
+    border-radius: 6px;
+    height: 80px;               /* 固定高度 */
+    display: flex;
+    align-items: center;        /* 垂直居中 */
+    justify-content: flex-start;/* 左对齐主内容, 右侧若需菜单也可 space-between */
+    gap: 2em;
+    padding: 0 1em;
+  ">
+    <!-- 左侧：Logo + 标题 + 菜单 -->
+    <div style="display: flex; align-items: center; gap: 2em;">
+      
+
+      <!-- 使标题可点击，链接到首页 -->
+      <a href="/" style="font-size: 1.5rem; font-weight: bold; text-decoration: none; color: inherit;">
+        Me
+      </a>
+
+      <nav>
+        <ul style="
+          list-style: none; 
+          margin: 0; 
+          padding: 0; 
+          display: flex; 
+          gap: 1.5em;
+        ">
+          
+            
+              <li>
+                <a href="/blog"
+                  style="text-decoration: underline; color: #333;">
+                  Blog
+                </a>
+              </li>
+            
+              <li>
+                <a href="/contact"
+                  style="text-decoration: underline; color: #333;">
+                  Contact
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags"
+                  style="text-decoration: underline; color: #333;">
+                  Tags
+                </a>
+              </li>
+            
+              <li>
+                <a href="/category"
+                  style="text-decoration: underline; color: #333;">
+                  Category
+                </a>
+              </li>
+            
+              <li>
+                <a href="/talk"
+                  style="text-decoration: underline; color: #333;">
+                  Talk
+                </a>
+              </li>
+            
+          
+        </ul>
+      </nav>
+    </div>
+
+    <!-- 右侧：可选链接（如Signalboost），若需在最右则可用 margin-left: auto -->
+    <div style="margin-left: auto;">
+      
+        <a href="/other"
+          style="text-decoration: underline; color: #333; font-size: 1rem;">
+          Other
+        </a>
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post-container">
+        <!-- 博文标题 -->
+        <h1>Semantic Versioning for GitHub Releases</h1>
+
+        <!-- 博文元数据（日期、标签） -->
+        <div class="post-meta">
+            <span>February 06, 2025</span>
+            
+                | <span>Tags:
+                    
+                        <a href="/tags/releases/">releases</a>
+                    
+                </span>
+            
+        </div>
+
+        <!-- 博文内容 -->
+        <div class="post-content">
+            <h2 id="What-is-Semantic-Versioning-SemVer"><a href="#What-is-Semantic-Versioning-SemVer" class="headerlink" title="What is Semantic Versioning (SemVer)?"></a><strong>What is Semantic Versioning (SemVer)?</strong></h2><p>Semantic Versioning (SemVer) is a widely adopted standard for naming software versions. It follows this format:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MAJOR.MINOR.PATCH</span><br></pre></td></tr></table></figure>
+
+<p>For example:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v1.0.0</span><br></pre></td></tr></table></figure>
+
+<p>Each part of the version number has a specific meaning:</p>
+<ul>
+<li><strong>MAJOR:</strong> Significant changes that break backward compatibility.</li>
+<li><strong>MINOR:</strong> New features that are backward compatible.</li>
+<li><strong>PATCH:</strong> Bug fixes and small improvements that do not change functionality.</li>
+</ul>
+<h3 id="Examples-of-Stable-Releases"><a href="#Examples-of-Stable-Releases" class="headerlink" title="Examples of Stable Releases:"></a><strong>Examples of Stable Releases:</strong></h3><table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>v1.0.0</code></td>
+<td>First stable release</td>
+</tr>
+<tr>
+<td><code>v1.1.0</code></td>
+<td>Adds new features, backward compatible</td>
+</tr>
+<tr>
+<td><code>v1.1.1</code></td>
+<td>Bug fix release, backward compatible</td>
+</tr>
+<tr>
+<td><code>v2.0.0</code></td>
+<td>Breaking changes introduced</td>
+</tr>
+</tbody></table>
+<h2 id="Pre-release-Versions-Testing-Versions"><a href="#Pre-release-Versions-Testing-Versions" class="headerlink" title="Pre-release Versions (Testing Versions)"></a><strong>Pre-release Versions (Testing Versions)</strong></h2><p>Before an official stable release, you may want to publish a <strong>pre-release version</strong> for testing purposes. These versions contain experimental features or improvements that need validation.</p>
+<h3 id="Naming-Format-for-Pre-release-Versions"><a href="#Naming-Format-for-Pre-release-Versions" class="headerlink" title="Naming Format for Pre-release Versions:"></a><strong>Naming Format for Pre-release Versions:</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MAJOR.MINOR.PATCH-identifier.version</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>Identifier</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-alpha</code></td>
+<td>Internal testing version (unstable)</td>
+</tr>
+<tr>
+<td><code>-beta</code></td>
+<td>Public testing version (feature-complete but may contain bugs)</td>
+</tr>
+<tr>
+<td><code>-rc</code></td>
+<td>Release Candidate (nearly stable, final testing)</td>
+</tr>
+<tr>
+<td><code>-snapshot</code></td>
+<td>Nightly or in-development snapshot</td>
+</tr>
+</tbody></table>
+<h3 id="Examples-of-Pre-release-Versions"><a href="#Examples-of-Pre-release-Versions" class="headerlink" title="Examples of Pre-release Versions:"></a><strong>Examples of Pre-release Versions:</strong></h3><table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>v1.0.0-alpha.1</code></td>
+<td>First alpha version (internal testing)</td>
+</tr>
+<tr>
+<td><code>v1.0.0-beta.2</code></td>
+<td>Second beta version (public testing)</td>
+</tr>
+<tr>
+<td><code>v1.0.0-rc.1</code></td>
+<td>First release candidate</td>
+</tr>
+<tr>
+<td><code>v1.0.0</code></td>
+<td>Final stable version</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="Other-Naming-Conventions"><a href="#Other-Naming-Conventions" class="headerlink" title="Other Naming Conventions"></a><strong>Other Naming Conventions</strong></h2><p>In some cases, you might want to add metadata or build information to the version number.</p>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>v1.0.0+build20240205</code></td>
+<td>Includes build metadata (doesn’t affect version sorting)</td>
+</tr>
+<tr>
+<td><code>v1.0.0-dev</code></td>
+<td>Development version</td>
+</tr>
+<tr>
+<td><code>v1.0.0-nightly</code></td>
+<td>Nightly build version</td>
+</tr>
+</tbody></table>
+
+        </div>
+
+        <!-- 分享按钮 -->
+        <div class="share-buttons">
+            <a href="https://twitter.com/intent/tweet?url=/2025/02/06/Semantic-Versioning-for-GitHub-Releases/&text=Semantic%20Versioning%20for%20GitHub%20Releases" target="_blank" aria-label="Share on Twitter">
+                <i class="fab fa-twitter" aria-hidden="true"></i> Share on Twitter
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=/2025/02/06/Semantic-Versioning-for-GitHub-Releases/" target="_blank" aria-label="Share on Facebook">
+                <i class="fab fa-facebook-f" aria-hidden="true"></i> Share on Facebook
+            </a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=/2025/02/06/Semantic-Versioning-for-GitHub-Releases/&title=Semantic%20Versioning%20for%20GitHub%20Releases" target="_blank" aria-label="Share on LinkedIn">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i> Share on LinkedIn
+            </a>
+            <!-- 根据需要添加更多分享按钮 -->
+        </div>
+
+        <!-- 文章标签 -->
+        
+            <div class="post-tags">
+                <strong>Tags:</strong>
+                
+                    <a href="/tags/releases/">releases</a>
+                
+            </div>
+        
+
+        <!-- 文章导航（上一篇/下一篇） -->
+        <div class="post-navigation">
+            
+                <span></span>
+            
+
+            
+                <a href="/2025/02/05/From-Setup-to-Exploitation-A-Comprehensive-Guide-to-2FA-Weaknesses/">Next Post: From Setup to Exploitation - A Comprehensive Guide to 2FA Weaknesses &#8594;</a>
+            
+        </div>
+        <div class="post-navigation">
+            
+                <span></span>
+            
+        
+            
+                <a href="/2025/02/05/From-Setup-to-Exploitation-A-Comprehensive-Guide-to-2FA-Weaknesses/">Next Post: From Setup to Exploitation - A Comprehensive Guide to 2FA Weaknesses &#8594;</a>
+            
+        </div>
+        
+        <!-- 评论区 -->
+        
+            <div id="comments">
+                
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = "http://iaaaannn0.com/2025/02/06/Semantic-Versioning-for-GitHub-Releases/";
+            this.page.identifier = "cm6satav90000oq9y5bh717kt";
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://mysite-ian.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments powered by <a target="_blank" rel="noopener" href="https://disqus.com/">Disqus</a>.</noscript>
+
+
+            </div>
+        
+
+    <!-- layout/_partial/footer.ejs -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <p class="footer-text">
+      Copyright 2012-2025 Ian.
+      Knowledge is not to be accumulated, but to be disseminated.
+    </p>
+
+    <hr class="footer-divider" />
+
+    <p class="footer-text">
+      Like what you see? Please share it!
+      </a>
+    </p>
+
+    <hr class="footer-divider" />
+
+    <p class="footer-text">
+      Served by <strong>Ian</strong> (<code>/app/iansite</code>)
+      with site version <strong>1.0.1</strong>,
+      source code available
+      <a href="https://github.com/iaaaannn0/hexo-theme-epsilon" target="_blank" class="footer-link">
+        here
+      </a>.
+    </p>
+    <!-- 引入 Highlight.js 的脚本 -->
+<script src="/js/highlight.min.js"></script> <!-- 确保 highlight.min.js 位于 /source/js/ 目录下 -->
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightElement(block);
+    });
+  });
+</script>
+  </div>
+</footer>
+</body>
+</html>
