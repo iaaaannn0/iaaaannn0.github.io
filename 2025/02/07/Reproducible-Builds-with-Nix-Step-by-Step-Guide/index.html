@@ -1,0 +1,282 @@
+<!-- layout/post.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Reproducible Builds with Nix Step by Step Guide | Ian&#39;s Archives</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 引入全局样式 -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- 引入 Highlight.js 的样式 -->
+  <link rel="stylesheet" href="/css/arta.min.css">
+
+  <!-- 引入 Font Awesome 用于分享按钮图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- 如果你有其他 CSS 文件，可以继续添加 -->
+  
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Ian's Archives" type="application/atom+xml">
+</head>
+<body>
+<body class="post-page">
+    <header style="
+  margin-bottom: 2em; 
+  background-color: #F8F5D7; /* 使 Header 的外层与正文背景一致，便于看见盒子区块效果 */
+">
+  <!-- 这是真正的 Header 盒子，宽度居中，固定高80px，背景、圆角等 -->
+  <div style="
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #F2E4BB;
+    border-radius: 6px;
+    height: 80px;               /* 固定高度 */
+    display: flex;
+    align-items: center;        /* 垂直居中 */
+    justify-content: flex-start;/* 左对齐主内容, 右侧若需菜单也可 space-between */
+    gap: 2em;
+    padding: 0 1em;
+  ">
+    <!-- 左侧：Logo + 标题 + 菜单 -->
+    <div style="display: flex; align-items: center; gap: 2em;">
+      
+
+      <!-- 使标题可点击，链接到首页 -->
+      <a href="/" style="font-size: 1.5rem; font-weight: bold; text-decoration: none; color: inherit;">
+        Me
+      </a>
+
+      <nav>
+        <ul style="
+          list-style: none; 
+          margin: 0; 
+          padding: 0; 
+          display: flex; 
+          gap: 1.5em;
+        ">
+          
+            
+              <li>
+                <a href="/blog"
+                  style="text-decoration: underline; color: #333;">
+                  Blog
+                </a>
+              </li>
+            
+              <li>
+                <a href="/contact"
+                  style="text-decoration: underline; color: #333;">
+                  Contact
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags"
+                  style="text-decoration: underline; color: #333;">
+                  Tags
+                </a>
+              </li>
+            
+              <li>
+                <a href="/category"
+                  style="text-decoration: underline; color: #333;">
+                  Category
+                </a>
+              </li>
+            
+              <li>
+                <a href="/talk"
+                  style="text-decoration: underline; color: #333;">
+                  Talk
+                </a>
+              </li>
+            
+          
+        </ul>
+      </nav>
+    </div>
+
+    <!-- 右侧：可选链接（如Signalboost），若需在最右则可用 margin-left: auto -->
+    <div style="margin-left: auto;">
+      
+        <a href="/other"
+          style="text-decoration: underline; color: #333; font-size: 1rem;">
+          Other
+        </a>
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post-container">
+        <!-- 博文标题 -->
+        <h1>Reproducible Builds with Nix Step by Step Guide</h1>
+
+        <!-- 博文元数据（日期、标签） -->
+        <div class="post-meta">
+            <span>February 07, 2025</span>
+            
+                | <span>Tags:
+                    
+                        <a href="/tags/nix/">nix</a>
+                    
+                </span>
+            
+        </div>
+
+        <!-- 博文内容 -->
+        <div class="post-content">
+            <blockquote>
+<p>Nix is a powerful package manager that provides reproducible builds, isolated environments, and efficient package management. In this guide, we’ll explore how to use Nix for package management and environment setups.</p>
+</blockquote>
+<h2 id="1-Installing-Software-Packages-with-Nix"><a href="#1-Installing-Software-Packages-with-Nix" class="headerlink" title="1. Installing Software Packages with Nix"></a>1. Installing Software Packages with Nix</h2><p>To install software packages, Nix uses the <code>nix-env</code> command. You can install a package with the following command:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nix-env -i &lt;package-name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>For example, to install the <code>hello</code> package, use:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nix-env -i hello</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-Searching-for-Packages"><a href="#2-Searching-for-Packages" class="headerlink" title="2. Searching for Packages"></a>2. Searching for Packages</h2><p>You can search for available packages in the Nix package repository using the following command:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nix-env -qaP &lt;package-name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>For example, to search for packages related to <code>hello</code>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nix-env -qaP hello</span><br></pre></td></tr></table></figure>
+
+<p>This will list all available packages matching the name <code>hello</code>.</p>
+<h2 id="3-Listing-Installed-Packages"><a href="#3-Listing-Installed-Packages" class="headerlink" title="3. Listing Installed Packages"></a>3. Listing Installed Packages</h2><p>To see the list of installed packages, use the following command:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nix-env -q</span><br></pre></td></tr></table></figure>
+
+<p>This will display all the currently installed packages on your system.</p>
+<h2 id="4-Upgrading-Installed-Packages"><a href="#4-Upgrading-Installed-Packages" class="headerlink" title="4. Upgrading Installed Packages"></a>4. Upgrading Installed Packages</h2><p>To upgrade all installed packages to their latest versions, run:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nix-env -u</span><br></pre></td></tr></table></figure>
+
+<p>If you want to upgrade a specific package, for example, <code>hello</code>, you can use:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nix-env -u hello</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-Removing-Packages"><a href="#5-Removing-Packages" class="headerlink" title="5. Removing Packages"></a>5. Removing Packages</h2><p>If you no longer need a particular package, you can uninstall it using the <code>nix-env</code> command:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nix-env -e &lt;package-name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>For example, to uninstall <code>hello</code>, use:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nix-env -e hello</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-Using-nix-shell-for-Isolated-Environments"><a href="#6-Using-nix-shell-for-Isolated-Environments" class="headerlink" title="6. Using nix-shell for Isolated Environments"></a>6. Using <code>nix-shell</code> for Isolated Environments</h2><p>Nix provides <code>nix-shell</code>, which allows you to enter an isolated environment with specific dependencies. You can create a <code>shell.nix</code> file to define the environment for a project. Here’s an example of a <code>shell.nix</code> file:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># shell.nix</span><br><span class="line">with import &lt;nixpkgs&gt; &#123;&#125;;</span><br><span class="line"></span><br><span class="line">stdenv.mkDerivation &#123;</span><br><span class="line">  name = &quot;hello-env&quot;;</span><br><span class="line">  buildInputs = [ hello ];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Once the <code>shell.nix</code> file is defined, enter the environment by running:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nix-shell</span><br></pre></td></tr></table></figure>
+
+<p>This will create a shell environment where the <code>hello</code> package and its dependencies are available.</p>
+<h2 id="7-Nix-Configuration-Files"><a href="#7-Nix-Configuration-Files" class="headerlink" title="7. Nix Configuration Files"></a>7. Nix Configuration Files</h2><p>In Nix, you can use configuration files to manage dependencies and software installation. Here’s an example of how to define a configuration in a Nix file. You can create a configuration file (e.g., <code>default.nix</code>) that specifies the packages to be installed:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># default.nix</span><br><span class="line">with import &lt;nixpkgs&gt; &#123;&#125;;</span><br><span class="line"></span><br><span class="line">stdenv.mkDerivation &#123;</span><br><span class="line">  name = &quot;my-environment&quot;;</span><br><span class="line">  buildInputs = [ vim hello ];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Commenting-in-Nix-Configuration-Files"><a href="#Commenting-in-Nix-Configuration-Files" class="headerlink" title="Commenting in Nix Configuration Files"></a>Commenting in Nix Configuration Files</h3><p>Nix allows you to add comments to your configuration files for clarity. Use <code>#</code> to add a comment:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># This is a simple Nix configuration file</span><br><span class="line">with import &lt;nixpkgs&gt; &#123;&#125;;</span><br><span class="line"></span><br><span class="line">stdenv.mkDerivation &#123;</span><br><span class="line">  name = &quot;my-environment&quot;;</span><br><span class="line">  buildInputs = [ vim hello ]; # Install vim and hello package</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>In this example:</p>
+<ul>
+<li><code>with import &lt;nixpkgs&gt;</code>: Imports the Nix Packages collection.</li>
+<li><code>stdenv.mkDerivation</code>: Creates a custom environment.</li>
+<li><code>buildInputs</code>: Specifies which packages (like <code>vim</code> and <code>hello</code>) to include in the environment.</li>
+</ul>
+
+        </div>
+
+        <!-- 分享按钮 -->
+        <div class="share-buttons">
+            <a href="https://twitter.com/intent/tweet?url=/2025/02/07/Reproducible-Builds-with-Nix-Step-by-Step-Guide/&text=Reproducible%20Builds%20with%20Nix%20Step%20by%20Step%20Guide" target="_blank" aria-label="Share on Twitter">
+                <i class="fab fa-twitter" aria-hidden="true"></i> Share on Twitter
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=/2025/02/07/Reproducible-Builds-with-Nix-Step-by-Step-Guide/" target="_blank" aria-label="Share on Facebook">
+                <i class="fab fa-facebook-f" aria-hidden="true"></i> Share on Facebook
+            </a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=/2025/02/07/Reproducible-Builds-with-Nix-Step-by-Step-Guide/&title=Reproducible%20Builds%20with%20Nix%20Step%20by%20Step%20Guide" target="_blank" aria-label="Share on LinkedIn">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i> Share on LinkedIn
+            </a>
+            <!-- 根据需要添加更多分享按钮 -->
+        </div>
+
+        <!-- 文章标签 -->
+        
+            <div class="post-tags">
+                <strong>Tags:</strong>
+                
+                    <a href="/tags/nix/">nix</a>
+                
+            </div>
+        
+
+        <!-- 文章导航（上一篇/下一篇） -->
+        <div class="post-navigation">
+            
+                <span></span>
+            
+
+            
+                <a href="/2025/02/06/Semantic-Versioning-for-GitHub-Releases/">Next Post: Semantic Versioning for GitHub Releases &#8594;</a>
+            
+        </div>
+        
+        <!-- 评论区 -->
+        
+            <div id="comments">
+                
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = "http://iaaaannn0.com/2025/02/07/Reproducible-Builds-with-Nix-Step-by-Step-Guide/";
+            this.page.identifier = "cm6trc6xr0000la9y35ki42ln";
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://mysite-ian.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments powered by <a target="_blank" rel="noopener" href="https://disqus.com/">Disqus</a>.</noscript>
+
+
+            </div>
+        
+        
+
+    <!-- layout/_partial/footer.ejs -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <p class="footer-text">
+      Copyright 2012-2025 Ian.
+      Knowledge is not to be accumulated, but to be disseminated.
+    </p>
+
+    <hr class="footer-divider" />
+
+    <p class="footer-text">
+      Like what you see? Please share it!
+      </a>
+    </p>
+
+    <hr class="footer-divider" />
+
+    <p class="footer-text">
+      Served by <strong>Ian</strong> (<code>/app/iansite</code>)
+      with site version <strong>1.0.1</strong>,
+      source code available
+      <a href="https://github.com/iaaaannn0/hexo-theme-epsilon" target="_blank" class="footer-link">
+        here
+      </a>.
+    </p>
+    <!-- 引入 Highlight.js 的脚本 -->
+<script src="/js/highlight.min.js"></script> <!-- 确保 highlight.min.js 位于 /source/js/ 目录下 -->
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightElement(block);
+    });
+  });
+</script>
+  </div>
+</footer>
+</body>
+</html>
