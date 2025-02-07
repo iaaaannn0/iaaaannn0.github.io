@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://iaaaannn0.com/2025/02/08/Configuring-Caddy-to-Handle-Multiple-Sites-and-Automatic-SSL-with-Cloudflare/</loc>
+    
+    <lastmod>2025-02-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://iaaaannn0.com/2025/02/07/Efficient-Python-Project-Management-with-Just/</loc>
     
     <lastmod>2025-02-07</lastmod>
@@ -112,6 +121,20 @@
   
   <url>
     <loc>http://iaaaannn0.com/tags/just/</loc>
+    <lastmod>2025-02-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://iaaaannn0.com/tags/cloudflare/</loc>
+    <lastmod>2025-02-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://iaaaannn0.com/tags/candy/</loc>
     <lastmod>2025-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
