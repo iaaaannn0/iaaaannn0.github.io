@@ -1,3 +1,4 @@
+http://iaaaannn0.com/2025/02/07/Efficient-Python-Project-Management-with-Just/
 http://iaaaannn0.com/2025/02/07/Reproducible-Builds-with-Nix-Step-by-Step-Guide/
 http://iaaaannn0.com/contact/index.html
 http://iaaaannn0.com/2025/02/06/Semantic-Versioning-for-GitHub-Releases/
@@ -10,3 +11,4 @@ http://iaaaannn0.com/tags/poetry/
 http://iaaaannn0.com/tags/vuls/
 http://iaaaannn0.com/tags/releases/
 http://iaaaannn0.com/tags/nix/
+http://iaaaannn0.com/tags/just/

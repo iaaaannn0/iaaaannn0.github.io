@@ -1,0 +1,292 @@
+<!-- layout/post.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Efficient Python Project Management with Just | Ian&#39;s Archives</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 引入全局样式 -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- 引入 Highlight.js 的样式 -->
+  <link rel="stylesheet" href="/css/arta.min.css">
+
+  <!-- 引入 Font Awesome 用于分享按钮图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- 如果你有其他 CSS 文件，可以继续添加 -->
+  
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Ian's Archives" type="application/atom+xml">
+</head>
+<body>
+<body class="post-page">
+    <header style="
+  margin-bottom: 2em; 
+  background-color: #F8F5D7; /* 使 Header 的外层与正文背景一致，便于看见盒子区块效果 */
+">
+  <!-- 这是真正的 Header 盒子，宽度居中，固定高80px，背景、圆角等 -->
+  <div style="
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #F2E4BB;
+    border-radius: 6px;
+    height: 80px;               /* 固定高度 */
+    display: flex;
+    align-items: center;        /* 垂直居中 */
+    justify-content: flex-start;/* 左对齐主内容, 右侧若需菜单也可 space-between */
+    gap: 2em;
+    padding: 0 1em;
+  ">
+    <!-- 左侧：Logo + 标题 + 菜单 -->
+    <div style="display: flex; align-items: center; gap: 2em;">
+      
+
+      <!-- 使标题可点击，链接到首页 -->
+      <a href="/" style="font-size: 1.5rem; font-weight: bold; text-decoration: none; color: inherit;">
+        Me
+      </a>
+
+      <nav>
+        <ul style="
+          list-style: none; 
+          margin: 0; 
+          padding: 0; 
+          display: flex; 
+          gap: 1.5em;
+        ">
+          
+            
+              <li>
+                <a href="/blog"
+                  style="text-decoration: underline; color: #333;">
+                  Blog
+                </a>
+              </li>
+            
+              <li>
+                <a href="/contact"
+                  style="text-decoration: underline; color: #333;">
+                  Contact
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags"
+                  style="text-decoration: underline; color: #333;">
+                  Tags
+                </a>
+              </li>
+            
+              <li>
+                <a href="/category"
+                  style="text-decoration: underline; color: #333;">
+                  Category
+                </a>
+              </li>
+            
+              <li>
+                <a href="/talk"
+                  style="text-decoration: underline; color: #333;">
+                  Talk
+                </a>
+              </li>
+            
+          
+        </ul>
+      </nav>
+    </div>
+
+    <!-- 右侧：可选链接（如Signalboost），若需在最右则可用 margin-left: auto -->
+    <div style="margin-left: auto;">
+      
+        <a href="/other"
+          style="text-decoration: underline; color: #333; font-size: 1rem;">
+          Other
+        </a>
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post-container">
+        <!-- 博文标题 -->
+        <h1>Efficient Python Project Management with Just</h1>
+
+        <!-- 博文元数据（日期、标签） -->
+        <div class="post-meta">
+            <span>February 07, 2025</span>
+            
+                | <span>Tags:
+                    
+                        <a href="/tags/just/">just</a>
+                    
+                </span>
+            
+        </div>
+
+        <!-- 博文内容 -->
+        <div class="post-content">
+            <blockquote>
+<h3 id="What-is-just"><a href="#What-is-just" class="headerlink" title="What is just?"></a>What is <code>just</code>?</h3><p><code>just</code> is a task runner that allows you to automate repetitive tasks. You define tasks in a <code>Justfile</code>, and instead of remembering long commands, you can simply run <code>just &lt;task&gt;</code> to execute them. This makes project management much simpler.</p>
+</blockquote>
+<h3 id="Creating-a-Justfile"><a href="#Creating-a-Justfile" class="headerlink" title="Creating a Justfile"></a>Creating a Justfile</h3><p>To use <code>just</code>, create a <code>Justfile</code> in the root directory of your project. This file is where you define your tasks.</p>
+<h4 id="Basic-Task-Definition"><a href="#Basic-Task-Definition" class="headerlink" title="Basic Task Definition"></a>Basic Task Definition</h4><p>A <code>Justfile</code> contains one or more tasks. Each task has a name followed by the commands you want to run.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Justfile</span><br><span class="line"></span><br><span class="line"># Define a task called hello</span><br><span class="line">hello:</span><br><span class="line">    echo &quot;Hello, World!&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Explanation</strong>:</p>
+<ul>
+<li><code>hello:</code> is the task name.</li>
+<li><code>echo &quot;Hello, World!&quot;</code> is the command that will run when you invoke this task.</li>
+</ul>
+<h4 id="Running-the-Task"><a href="#Running-the-Task" class="headerlink" title="Running the Task"></a>Running the Task</h4><p>Once you’ve created the <code>Justfile</code>, you can run the task in your terminal by typing:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">just hello</span><br></pre></td></tr></table></figure>
+
+<p>You should see the following output:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello, World!</span><br></pre></td></tr></table></figure>
+
+<h3 id="Using-Variables-in-Tasks"><a href="#Using-Variables-in-Tasks" class="headerlink" title="Using Variables in Tasks"></a>Using Variables in Tasks</h3><p>You can define variables in the <code>Justfile</code> and use them in your tasks. Variables are defined simply by assignment.</p>
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Justfile</span><br><span class="line"></span><br><span class="line"># Define a variable</span><br><span class="line">name := &quot;Alice&quot;</span><br><span class="line"></span><br><span class="line"># Define a task</span><br><span class="line">greet:</span><br><span class="line">    echo &quot;Hello, &#123;&#123;name&#125;&#125;!&quot;</span><br></pre></td></tr></table></figure>
+
+<p><code>&#123;&#123;name&#125;&#125;</code> will be replaced with the value of the <code>name</code> variable. When you run the task:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">just greet</span><br></pre></td></tr></table></figure>
+
+<p>The output will be:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello, Alice!</span><br></pre></td></tr></table></figure>
+
+<h4 id="Using-Command-Line-Arguments"><a href="#Using-Command-Line-Arguments" class="headerlink" title="Using Command-Line Arguments"></a>Using Command-Line Arguments</h4><p>You can also pass arguments from the command line to your tasks. This is useful if you want your tasks to be dynamic and change based on input.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Justfile</span><br><span class="line"></span><br><span class="line"># Task with command-line argument</span><br><span class="line">greet_name name:</span><br><span class="line">    echo &quot;Hello, &#123;&#123;name&#125;&#125;!&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Now you can run the task and provide a name as an argument:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">just greet_name Bob</span><br></pre></td></tr></table></figure>
+
+<p>Output:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello, Bob!</span><br></pre></td></tr></table></figure>
+
+<h3 id="Task-Dependencies"><a href="#Task-Dependencies" class="headerlink" title="Task Dependencies"></a>Task Dependencies</h3><p>You can make tasks depend on other tasks. This allows you to chain tasks together, ensuring that one task runs before another.</p>
+<h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example:"></a>Example:</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Justfile</span><br><span class="line"></span><br><span class="line"># Define a setup task</span><br><span class="line">setup:</span><br><span class="line">    echo &quot;Setting up the environment&quot;</span><br><span class="line"></span><br><span class="line"># Define a build task, which depends on setup</span><br><span class="line">build: setup</span><br><span class="line">    echo &quot;Building the project&quot;</span><br></pre></td></tr></table></figure>
+
+<p>In this case, running <code>just build</code> will first execute the <code>setup</code> task, and then it will proceed with the <code>build</code> task:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">just build</span><br></pre></td></tr></table></figure>
+
+<p>Output:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Setting up the environment</span><br><span class="line">Building the project</span><br></pre></td></tr></table></figure>
+
+<h3 id="Conditionals-and-Loops"><a href="#Conditionals-and-Loops" class="headerlink" title="Conditionals and Loops"></a>Conditionals and Loops</h3><p><code>just</code> supports basic conditionals and loops, which you can use to add more logic to your tasks.</p>
+<h4 id="Conditional-Example"><a href="#Conditional-Example" class="headerlink" title="Conditional Example:"></a>Conditional Example:</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Justfile</span><br><span class="line"></span><br><span class="line"># Task: Check environment</span><br><span class="line">check_env:</span><br><span class="line">    if test -f &quot;dev.env&quot;; then</span><br><span class="line">        echo &quot;Development environment detected&quot;</span><br><span class="line">    else</span><br><span class="line">        echo &quot;Production environment detected&quot;</span><br><span class="line">    fi</span><br></pre></td></tr></table></figure>
+
+<p>This example checks if the <code>dev.env</code> file exists and prints a message based on whether it’s found.</p>
+<h4 id="Loop-Example"><a href="#Loop-Example" class="headerlink" title="Loop Example:"></a>Loop Example:</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Justfile</span><br><span class="line"></span><br><span class="line"># Task: Print numbers from 1 to 5</span><br><span class="line">print_numbers:</span><br><span class="line">    for i in &#123;1..5&#125;; do</span><br><span class="line">        echo &quot;Number: $i&quot;</span><br><span class="line">    done</span><br></pre></td></tr></table></figure>
+
+<h3 id="Using-Just-for-Python-Projects"><a href="#Using-Just-for-Python-Projects" class="headerlink" title="Using Just for Python Projects"></a>Using Just for Python Projects</h3><p>If you have a Python project, you can use <code>just</code> to manage common tasks like running tests, installing dependencies, or running your application.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># Justfile</span><br><span class="line"></span><br><span class="line"># Task: Install dependencies</span><br><span class="line">install:</span><br><span class="line">    pip install -r requirements.txt</span><br><span class="line"></span><br><span class="line"># Task: Run the Python script</span><br><span class="line">run:</span><br><span class="line">    python3 app.py</span><br><span class="line"></span><br><span class="line"># Task: Run unit tests</span><br><span class="line">test:</span><br><span class="line">    pytest tests/</span><br></pre></td></tr></table></figure>
+
+<p>Now, you can run these tasks simply by typing:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">just install    # Install dependencies</span><br><span class="line">just run        # Run the Python script</span><br><span class="line">just test       # Run unit tests</span><br></pre></td></tr></table></figure>
+
+<h3 id="Advanced-Usage-Skipping-Tasks"><a href="#Advanced-Usage-Skipping-Tasks" class="headerlink" title="Advanced Usage: Skipping Tasks"></a>Advanced Usage: Skipping Tasks</h3><p>You can skip a task’s execution by prefixing its name with <code>@</code>. This is useful when you want to skip a task in a chain.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">just @install</span><br></pre></td></tr></table></figure>
+
+<p>This will skip the <code>install</code> task and proceed with the next task.</p>
+
+        </div>
+
+        <!-- 分享按钮 -->
+        <div class="share-buttons">
+            <a href="https://twitter.com/intent/tweet?url=/2025/02/07/Efficient-Python-Project-Management-with-Just/&text=Efficient%20Python%20Project%20Management%20with%20Just" target="_blank" aria-label="Share on Twitter">
+                <i class="fab fa-twitter" aria-hidden="true"></i> Share on Twitter
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=/2025/02/07/Efficient-Python-Project-Management-with-Just/" target="_blank" aria-label="Share on Facebook">
+                <i class="fab fa-facebook-f" aria-hidden="true"></i> Share on Facebook
+            </a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=/2025/02/07/Efficient-Python-Project-Management-with-Just/&title=Efficient%20Python%20Project%20Management%20with%20Just" target="_blank" aria-label="Share on LinkedIn">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i> Share on LinkedIn
+            </a>
+            <!-- 根据需要添加更多分享按钮 -->
+        </div>
+
+        <!-- 文章标签 -->
+        
+            <div class="post-tags">
+                <strong>Tags:</strong>
+                
+                    <a href="/tags/just/">just</a>
+                
+            </div>
+        
+
+        <!-- 文章导航（上一篇/下一篇） -->
+        <div class="post-navigation">
+            
+                <span></span>
+            
+
+            
+                <a href="/2025/02/07/Reproducible-Builds-with-Nix-Step-by-Step-Guide/">Next Post: Reproducible Builds with Nix Step by Step Guide &#8594;</a>
+            
+        </div>
+        
+        <!-- 评论区 -->
+        
+            <div id="comments">
+                
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = "http://iaaaannn0.com/2025/02/07/Efficient-Python-Project-Management-with-Just/";
+            this.page.identifier = "cm6v2elkq0000p09yax3rccwy";
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://mysite-ian.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments powered by <a target="_blank" rel="noopener" href="https://disqus.com/">Disqus</a>.</noscript>
+
+
+            </div>
+        
+        
+
+    <!-- layout/_partial/footer.ejs -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <p class="footer-text">
+      Copyright 2012-2025 Ian.
+      Knowledge is not to be accumulated, but to be disseminated.
+    </p>
+
+    <hr class="footer-divider" />
+
+    <p class="footer-text">
+      Like what you see? Please share it!
+      </a>
+    </p>
+
+    <hr class="footer-divider" />
+
+    <p class="footer-text">
+      Served by <strong>Ian</strong> (<code>/app/iansite</code>)
+      with site version <strong>1.0.1</strong>,
+      source code available
+      <a href="https://github.com/iaaaannn0/hexo-theme-epsilon" target="_blank" class="footer-link">
+        here
+      </a>.
+    </p>
+    <!-- 引入 Highlight.js 的脚本 -->
+<script src="/js/highlight.min.js"></script> <!-- 确保 highlight.min.js 位于 /source/js/ 目录下 -->
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightElement(block);
+    });
+  });
+</script>
+  </div>
+</footer>
+</body>
+</html>
