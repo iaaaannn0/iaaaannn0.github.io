@@ -6,7 +6,7 @@
   <link href="http://iaaaannn0.com/atom.xml" rel="self"/>
   
   <link href="http://iaaaannn0.com/"/>
-  <updated>2025-02-19T12:37:28.034Z</updated>
+  <updated>2025-04-02T11:51:46.910Z</updated>
   <id>http://iaaaannn0.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GitHub Keywords for Automatically Closing Issues</title>
+    <link href="http://iaaaannn0.com/2025/04/02/GitHub-Keywords-for-Automatically-Closing-Issues/"/>
+    <id>http://iaaaannn0.com/2025/04/02/GitHub-Keywords-for-Automatically-Closing-Issues/</id>
+    <published>2025-04-02T11:50:08.000Z</published>
+    <updated>2025-04-02T11:51:46.910Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>GitHub supports special keywords that allow issues to be closed automatically when a pull request or commit is merged into the default branch, such as main. This functionality helps maintain cleaner workflows and better issue tracking.</p></blockquote><p><strong>Common Keywords for Auto-Closing</strong></p><p>The following keywords, when used in a pull request description or commit message, will automatically close the referenced issue once the code is merged:</p><p>​•fixes #1</p><p>​•closes #1</p><p>​•resolves #1</p><p>Example:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Fixes <span class="comment">#42 by updating the caching strategy.</span></span><br></pre></td></tr></table></figure><p>Multiple issues can also be referenced in the same statement:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Closes <span class="comment">#5, resolves #7, and fixes #9.</span></span><br></pre></td></tr></table></figure><p><strong>Referencing Without Closing</strong></p><p>To create links between issues and pull requests without triggering auto-close, use general references such as:</p><p>​•Related to #2</p><p>​•See also: #3</p><p>​•Blocked by #4</p><p>These references do not close any issues but appear in the sidebar for better visibility and traceability.</p><p><strong>Notes on Behavior</strong></p><p>​•Auto-closing only occurs when the pull request is merged into the default branch.</p><p>​•Keywords must be in the pull request description or the commit message that is part of the merge.</p><p>​•Comments or discussion threads do not trigger automatic closing, even if keywords are present.</p><p><strong>Summary</strong></p><p>Using GitHub’s built-in keyword system enhances automation and keeps issue lists up to date with minimal manual intervention. Including the appropriate keywords ensures that completed work is properly tracked and linked.</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;GitHub supports special keywords that allow issues to be closed automatically when a pull request or commit is merged into t</summary>
+      
+    
+    
+    
+    
+    <category term="github" scheme="http://iaaaannn0.com/tags/github/"/>
+    
+  </entry>
   
   <entry>
     <title>Top 10 API Security Vulnerabilities and How to Test Them</title>

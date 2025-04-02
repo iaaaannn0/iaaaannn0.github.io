@@ -1,3 +1,4 @@
+http://iaaaannn0.com/2025/04/02/GitHub-Keywords-for-Automatically-Closing-Issues/
 http://iaaaannn0.com/2025/02/19/API-Security-Testing/
 http://iaaaannn0.com/2025/02/08/Configuring-Caddy-to-Handle-Multiple-Sites-and-Automatic-SSL-with-Cloudflare/
 http://iaaaannn0.com/2025/02/07/Efficient-Python-Project-Management-with-Just/
@@ -16,3 +17,4 @@ http://iaaaannn0.com/tags/nix/
 http://iaaaannn0.com/tags/just/
 http://iaaaannn0.com/tags/cloudflare/
 http://iaaaannn0.com/tags/candy/
+http://iaaaannn0.com/tags/github/
